@@ -14,6 +14,8 @@ abstract class _GetPhrasesControllerBase with Store {
     getInitialList();
   }
 
+
+  @action
   Future<void> getInitialList() async {
     final result = await getPhrasesUseCase();
 

@@ -9,6 +9,14 @@ part of 'get_phrases.controller.dart';
 // ignore_for_file: non_constant_identifier_names, unnecessary_brace_in_string_interps, unnecessary_lambdas, prefer_expression_function_bodies, lines_longer_than_80_chars, avoid_as, avoid_annotating_with_dynamic
 
 mixin _$GetPhrasesController on _GetPhrasesControllerBase, Store {
+  final _$getInitialListAsyncAction =
+      AsyncAction('_GetPhrasesControllerBase.getInitialList');
+
+  @override
+  Future<void> getInitialList() {
+    return _$getInitialListAsyncAction.run(() => super.getInitialList());
+  }
+
   @override
   String toString() {
     return '''

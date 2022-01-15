@@ -7,8 +7,10 @@ environment:
   flutter: 2.8.1
 
 dependencies:
+  cloud_firestore: ^3.1.6
   cupertino_icons: ^1.0.2
   dartz: ^0.10.1
+  firebase_core: ^1.11.0
   flutter:
     sdk: flutter
   flutter_localizations:

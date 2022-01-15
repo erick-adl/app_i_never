@@ -2,8 +2,11 @@ import 'package:app_i_never/src/core/ioc/ioc.dart';
 
 import 'package:app_i_never/src/features/presentation/ui/home.page.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
   Ioc.init();
   runApp(const MyApp());
 }
