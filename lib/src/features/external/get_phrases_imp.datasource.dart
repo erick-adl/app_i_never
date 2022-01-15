@@ -13,18 +13,14 @@ class GetPhrasesDataSourceImp implements IGetPhrasesDataSource {
     try {
       final snapshot = await firestore.collection('br_phrases').get();
 
-      snapshot.docs.forEach((element) {
-        print(element['text']);
-      });
+      final List<PhraseEntity> listOfPhrases = snapshot.docs
+          .map((QueryDocumentSnapshot<Map<String, dynamic>> e) =>
+              PhraseEntity.fromJson(e.data()))
+          .toList();
 
-      final List<PhraseEntity> listOfPhrases = [
-        PhraseEntity('1', '11'),
-        PhraseEntity('2', '22'),
-        PhraseEntity('3', '33'),
-      ];
-      return Future.value(Right(listOfPhrases));
+      return Right(listOfPhrases);
     } on Exception catch (e) {
-      return Future.value(Left(e));
+      return Left(e);
     } catch (o) {
       print('${o.runtimeType} - ${o.toString()}');
       return Future.value(Left(Exception('Unknow error')));
