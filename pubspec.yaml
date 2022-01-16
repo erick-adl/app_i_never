@@ -7,6 +7,7 @@ environment:
   flutter: 2.8.1
 
 dependencies:
+  bordered_text: ^2.0.0
   cloud_firestore: ^3.1.6
   cupertino_icons: ^1.0.2
   dartz: ^0.10.1
@@ -16,6 +17,7 @@ dependencies:
   flutter_localizations:
     sdk: flutter
   flutter_mobx: ^2.0.3+2
+  font_awesome_flutter: ^9.2.0
   freezed_annotation: ^1.1.0
   get_it: ^7.2.0
   intl: ^0.17.0
@@ -32,3 +34,9 @@ dev_dependencies:
 flutter:
   generate: true
   uses-material-design: true
+  fonts:
+    - family: Valden
+      fonts:
+        - asset: assets/Valden.otf
+  assets:
+    - assets/mugs.png
