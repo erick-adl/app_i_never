@@ -1,3 +1,4 @@
+import 'package:app_i_never/src/core/theme/colors.dart';
 import 'package:app_i_never/src/features/presentation/controller/home.controller.dart';
 import 'package:app_i_never/src/features/presentation/ui/components/bordered_text.dart';
 import 'package:bordered_text/bordered_text.dart';
@@ -26,7 +27,7 @@ class _HomePageState extends State<HomePage> {
     final double height = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      backgroundColor: Color.fromRGBO(255, 243, 1, 1),
+      backgroundColor: customYellow,
       body: Container(
         child: Padding(
           padding: EdgeInsets.only(top: height - (height - 60)),
@@ -35,11 +36,11 @@ class _HomePageState extends State<HomePage> {
               // mainAxisAlignment: MainAxisAlignment.center,
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
-                MyBorderesText('Eu nunca...', 40),
-                MyBorderesText('Never Have I Ever', 35),
-                MyBorderesText('Drinnking game', 20,
-                    color: Color.fromRGBO(53, 186, 224, 1)),
-                Image.asset('assets/mugs.png', scale: 1.5),
+                MyBorderesText('Eu nunca...', 35),
+                MyBorderesText('Never Have I Ever', 30),
+                MyBorderesText('Drinnking game', 15,
+                    color: customYBlue),
+                Image.asset('assets/mugs.png', scale: 1.8),
               ],
             ),
           ),
