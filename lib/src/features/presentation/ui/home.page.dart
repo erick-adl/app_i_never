@@ -1,4 +1,4 @@
-import 'package:app_i_never/src/features/presentation/controller/get_phrases.controller.dart';
+import 'package:app_i_never/src/features/presentation/controller/home.controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
@@ -10,11 +10,11 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  late GetPhrasesController _controller;
+  late HomeController _controller;
 
   @override
   void initState() {
-    _controller = GetIt.I.get<GetPhrasesController>();
+    _controller = GetIt.I.get<HomeController>();
     super.initState();
   }
 

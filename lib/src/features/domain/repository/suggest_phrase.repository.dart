@@ -2,6 +2,6 @@ import 'package:app_i_never/src/features/domain/entities/phrase.entity.dart';
 import 'package:app_i_never/src/features/domain/entities/phrase_language.enum.dart';
 import 'package:dartz/dartz.dart';
 
-abstract class IGetPhrasesDataSource {
-  Future<Either<Exception, List<PhraseEntity>>> call(PhraseLanguage phraseLanguage);
+abstract class ISuggestPhraseRepository {
+  Future<Either<Exception, bool>> call(PhraseLanguage phraseLanguage, PhraseEntity phraseEntity);
 }
