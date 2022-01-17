@@ -17,14 +17,6 @@ mixin _$HomeController on _HomeControllerBase, Store {
     return _$getInitialListAsyncAction.run(() => super.getInitialList());
   }
 
-  final _$sendSuggestPhraseAsyncAction =
-      AsyncAction('_HomeControllerBase.sendSuggestPhrase');
-
-  @override
-  Future<void> sendSuggestPhrase() {
-    return _$sendSuggestPhraseAsyncAction.run(() => super.sendSuggestPhrase());
-  }
-
   @override
   String toString() {
     return '''

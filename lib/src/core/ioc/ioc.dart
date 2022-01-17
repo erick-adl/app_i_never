@@ -9,6 +9,7 @@ import 'package:app_i_never/src/feature/domain/usercases/suggest_phrase.usecase.
 import 'package:app_i_never/src/feature/external/get_phrases_imp.datasource.dart';
 import 'package:app_i_never/src/feature/external/suggest_phrase_imp.datasource.dart';
 import 'package:app_i_never/src/feature/presentation/controller/home.controller.dart';
+import 'package:app_i_never/src/feature/presentation/controller/suggest.controller.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get_it/get_it.dart';
 
@@ -32,6 +33,7 @@ class Ioc {
     getIt.registerSingleton<ISuggestPhraseUseCase>(
         SuggestPhraseUseCaseImp(GetIt.instance()));
 
-    getIt.registerFactory(() => HomeController(GetIt.I(), GetIt.I()));
+    getIt.registerFactory(() => HomeController(GetIt.I()));
+    getIt.registerFactory(() => SuggestController(GetIt.I()));
   }
 }

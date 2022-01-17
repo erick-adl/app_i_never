@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 
-class CardSuggestWidget extends StatelessWidget {
+class CardOwnerSuggestWidget extends StatelessWidget {
   final TextEditingController? textEditingController;
 
-  const CardSuggestWidget({Key? key, this.textEditingController})
+  const CardOwnerSuggestWidget({Key? key, this.textEditingController})
       : super(key: key);
 
   @override
@@ -20,12 +20,11 @@ class CardSuggestWidget extends StatelessWidget {
           child: Padding(
             padding: EdgeInsets.all(8.0),
             child: TextField(
-              textInputAction: TextInputAction.done,
               controller: textEditingController,
               style: TextStyle(fontSize: 14, fontFamily: 'Valden'),
-              maxLines: 4,
+              maxLines: 1,
               decoration: InputDecoration.collapsed(
-                  hintText: "Deixe sua sugestão de frase aqui...",
+                  hintText: "Deixe seu @nome (opcional)",
                   hintStyle: TextStyle(
                       color: Colors.grey,
                       fontSize: 14,
