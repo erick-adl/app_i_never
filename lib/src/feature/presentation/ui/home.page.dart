@@ -44,9 +44,10 @@ class _HomePageState extends State<HomePage> {
                 customBorderesText('Drinnking game', 20, color: customBlue),
                 Image.asset('assets/mugs.png', scale: 1.8),
                 SizedBox(height: 20),
-                menuCustomElevatedButton('Jogar'),
-                menuCustomElevatedButton('Categorias'),
-                menuCustomElevatedButton('Sugerir frase'),
+                menuCustomElevatedButton('Jogar', () => print('Jogar clicked')),
+                menuCustomElevatedButton('Categorias', () => print('Categorias clicked')),
+                menuCustomElevatedButton(
+                    'Sugerir frase', () => print('Sugerir frase clicked')),
                 Spacer(),
                 MySocialMediaWidget()
               ],

@@ -2,10 +2,10 @@ import 'package:app_i_never/src/core/theme/colors.dart';
 import 'package:app_i_never/src/feature/presentation/ui/components/bordered_text.dart';
 import 'package:flutter/material.dart';
 
-Widget menuCustomElevatedButton(String text) => Padding(
+Widget menuCustomElevatedButton(String text, Function()? onPressed) => Padding(
       padding: const EdgeInsets.all(8.0),
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: onPressed,
         child: customBorderesText(text, 25, color: Colors.white),
         style: ElevatedButton.styleFrom(
             fixedSize: const Size(270, 60),
