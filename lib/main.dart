@@ -1,8 +1,9 @@
 import 'package:app_i_never/src/core/ioc/ioc.dart';
+import 'package:app_i_never/src/core/route/route.dart';
 
-import 'package:app_i_never/src/feature/presentation/ui/home.page.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
+
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -16,9 +17,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       title: 'Eu nunca - Never Have I Ever',
-      home: HomePage(),
+      initialRoute: AppRoutes.homePage,
+      onGenerateRoute: AppRoutes.controller,
     );
   }
 }
