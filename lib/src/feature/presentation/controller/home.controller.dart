@@ -1,7 +1,7 @@
-import 'package:app_i_never/src/features/domain/entities/phrase.entity.dart';
-import 'package:app_i_never/src/features/domain/entities/phrase_language.enum.dart';
-import 'package:app_i_never/src/features/domain/usercases/get_phrases.usecase.dart';
-import 'package:app_i_never/src/features/domain/usercases/suggest_phrase.usecase.dart';
+import 'package:app_i_never/src/feature/domain/entities/phrase.entity.dart';
+import 'package:app_i_never/src/feature/domain/entities/phrase_language.enum.dart';
+import 'package:app_i_never/src/feature/domain/usercases/get_phrases.usecase.dart';
+import 'package:app_i_never/src/feature/domain/usercases/suggest_phrase.usecase.dart';
 import 'package:mobx/mobx.dart';
 part 'home.controller.g.dart';
 

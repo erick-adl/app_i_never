@@ -1,6 +1,6 @@
 import 'package:app_i_never/src/core/ioc/ioc.dart';
 
-import 'package:app_i_never/src/features/presentation/ui/home.page.dart';
+import 'package:app_i_never/src/feature/presentation/ui/home.page.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 

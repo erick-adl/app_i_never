@@ -2,7 +2,7 @@ import 'package:app_i_never/src/core/theme/colors.dart';
 import 'package:bordered_text/bordered_text.dart';
 import 'package:flutter/material.dart';
 
-Widget MyBorderesText(String text, double size, {Color? color}) => BorderedText(
+Widget customBorderesText(String text, double size, {Color? color}) => BorderedText(
       strokeWidth: 2.0,
       child: Text(
         text,

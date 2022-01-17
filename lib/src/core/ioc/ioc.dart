@@ -1,14 +1,14 @@
-import 'package:app_i_never/src/features/data/datasources/get_phrases.datasource.dart';
-import 'package:app_i_never/src/features/data/datasources/suggest_phrase.datasource.dart';
-import 'package:app_i_never/src/features/data/repositories/get_phrases_imp.repository.dart';
-import 'package:app_i_never/src/features/data/repositories/suggest_phrase_imp.repository.dart';
-import 'package:app_i_never/src/features/domain/repository/get_phrases.repository.dart';
-import 'package:app_i_never/src/features/domain/repository/suggest_phrase.repository.dart';
-import 'package:app_i_never/src/features/domain/usercases/get_phrases.usecase.dart';
-import 'package:app_i_never/src/features/domain/usercases/suggest_phrase.usecase.dart';
-import 'package:app_i_never/src/features/external/get_phrases_imp.datasource.dart';
-import 'package:app_i_never/src/features/external/suggest_phrase_imp.datasource.dart';
-import 'package:app_i_never/src/features/presentation/controller/home.controller.dart';
+import 'package:app_i_never/src/feature/data/datasources/get_phrases.datasource.dart';
+import 'package:app_i_never/src/feature/data/datasources/suggest_phrase.datasource.dart';
+import 'package:app_i_never/src/feature/data/repositories/get_phrases_imp.repository.dart';
+import 'package:app_i_never/src/feature/data/repositories/suggest_phrase_imp.repository.dart';
+import 'package:app_i_never/src/feature/domain/repository/get_phrases.repository.dart';
+import 'package:app_i_never/src/feature/domain/repository/suggest_phrase.repository.dart';
+import 'package:app_i_never/src/feature/domain/usercases/get_phrases.usecase.dart';
+import 'package:app_i_never/src/feature/domain/usercases/suggest_phrase.usecase.dart';
+import 'package:app_i_never/src/feature/external/get_phrases_imp.datasource.dart';
+import 'package:app_i_never/src/feature/external/suggest_phrase_imp.datasource.dart';
+import 'package:app_i_never/src/feature/presentation/controller/home.controller.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:get_it/get_it.dart';
 
