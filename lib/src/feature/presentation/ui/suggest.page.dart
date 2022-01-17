@@ -80,9 +80,9 @@ class _SuggestPageState extends State<SuggestPage> {
                                     .then((value) {
                                   _pharaseController.clear();
                                   _ownerController.clear();
-                                  if (!value) {
-                                    showDialogFail(context)..show();
-                                  }
+                                  value
+                                      ? showDialogSucces(context).show()
+                                      : showDialogFail(context).show();
                                 });
                               }
                             : null),
@@ -108,5 +108,18 @@ class _SuggestPageState extends State<SuggestPage> {
         btnOkOnPress: () {},
         btnOkIcon: Icons.cancel,
         btnOkColor: customBlue);
+  }
+
+  AwesomeDialog showDialogSucces(BuildContext context) {
+    return AwesomeDialog(
+        context: context,
+        dialogType: DialogType.SUCCES,
+        animType: AnimType.TOPSLIDE,
+        headerAnimationLoop: true,
+        title: 'Pronto!',
+        desc: 'Sua sugestão foi recebida.',
+        btnOkOnPress: () {},
+        btnOkIcon: Icons.cancel,
+        btnOkColor: customPink);
   }
 }
