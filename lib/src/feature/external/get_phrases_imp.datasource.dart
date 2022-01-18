@@ -19,6 +19,8 @@ class GetPhrasesDataSourceImp implements IGetPhrasesDataSource {
               PhraseEntity.fromJson(e.data()))
           .toList();
 
+      listOfPhrases.shuffle();
+
       return Right(listOfPhrases);
     } on Exception catch (e) {
       return Left(e);

@@ -6,7 +6,6 @@ import 'package:app_i_never/src/feature/presentation/ui/components/loader.dart';
 import 'package:app_i_never/src/feature/presentation/ui/components/card_owner_suggest.dart';
 import 'package:app_i_never/src/feature/presentation/ui/components/card_suggest.dart';
 import 'package:app_i_never/src/feature/presentation/ui/components/custom_buttons.dart';
-import 'package:awesome_dialog/awesome_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get_it/get_it.dart';
@@ -43,14 +42,13 @@ class _SuggestPageState extends State<SuggestPage> {
 
   @override
   Widget build(BuildContext context) {
-    final double height = MediaQuery.of(context).size.height;
-
     return Scaffold(
       backgroundColor: customYellow,
       body: SingleChildScrollView(
         child: Container(
           padding: EdgeInsets.symmetric(
-              horizontal: 20, vertical: MediaQuery.of(context).padding.top+20),
+              horizontal: 20,
+              vertical: MediaQuery.of(context).padding.top + 20),
           child: Center(
             child: Observer(builder: (_) {
               return Column(

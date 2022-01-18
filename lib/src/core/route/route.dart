@@ -1,3 +1,4 @@
+import 'package:app_i_never/src/feature/presentation/ui/game.page.dart';
 import 'package:app_i_never/src/feature/presentation/ui/home.page.dart';
 import 'package:app_i_never/src/feature/presentation/ui/suggest.page.dart';
 import 'package:flutter/cupertino.dart';
@@ -19,7 +20,7 @@ class AppRoutes {
       case suggestPage:
         return CupertinoPageRoute(builder: (context) => SuggestPage());
       case gamePage:
-        return MaterialPageRoute(builder: (context) => Container());
+        return MaterialPageRoute(builder: (context) => GamePage());
       default:
         throw ('This route name does not exit');
     }

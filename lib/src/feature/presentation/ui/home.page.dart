@@ -2,9 +2,7 @@ import 'package:app_i_never/src/core/route/route.dart';
 import 'package:app_i_never/src/core/theme/colors.dart';
 import 'package:app_i_never/src/feature/presentation/controller/home.controller.dart';
 import 'package:app_i_never/src/feature/presentation/ui/components/app_title.dart';
-import 'package:app_i_never/src/feature/presentation/ui/components/bordered_text.dart';
 import 'package:app_i_never/src/feature/presentation/ui/components/custom_buttons.dart';
-import 'package:app_i_never/src/feature/presentation/ui/components/social_media.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
 
@@ -26,9 +24,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-    final double height = MediaQuery.of(context).size.height;
-    final double width = MediaQuery.of(context).size.width;
-
     return Scaffold(
       backgroundColor: customYellow,
       body: Container(
@@ -41,8 +36,8 @@ class _HomePageState extends State<HomePage> {
               AppTitleWidget(),
               Image.asset('assets/mugs.png', scale: 1.8),
               SizedBox(height: 20),
-              menuCustomElevatedButton('Jogar', () => print('Jogar clicked')),
-              // menuCustomElevatedButton('Categorias', () => print('Categorias clicked')),
+              menuCustomElevatedButton('Start',
+                  () => Navigator.pushNamed(context, AppRoutes.gamePage)),
               menuCustomElevatedButton('Sugerir frase',
                   () => Navigator.pushNamed(context, AppRoutes.suggestPage)),
             ],

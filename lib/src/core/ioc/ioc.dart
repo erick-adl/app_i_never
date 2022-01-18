@@ -33,7 +33,7 @@ class Ioc {
     getIt.registerSingleton<ISuggestPhraseUseCase>(
         SuggestPhraseUseCaseImp(GetIt.instance()));
 
-    getIt.registerFactory(() => HomeController(GetIt.I()));
+    getIt.registerSingleton<HomeController>(HomeController(GetIt.I()));
     getIt.registerFactory(() => SuggestController(GetIt.I()));
   }
 }
