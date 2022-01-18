@@ -1,7 +1,7 @@
 import 'package:app_i_never/src/core/theme/colors.dart';
-import 'package:app_i_never/src/feature/presentation/controller/home.controller.dart';
 import 'package:app_i_never/src/feature/presentation/controller/suggest.controller.dart';
 import 'package:app_i_never/src/feature/presentation/ui/components/app_title.dart';
+import 'package:app_i_never/src/feature/presentation/ui/components/custom_dialog_box.dart';
 import 'package:app_i_never/src/feature/presentation/ui/components/loader.dart';
 import 'package:app_i_never/src/feature/presentation/ui/components/card_owner_suggest.dart';
 import 'package:app_i_never/src/feature/presentation/ui/components/card_suggest.dart';
@@ -74,16 +74,19 @@ class _SuggestPageState extends State<SuggestPage> {
                           _pharaseController.text.length > 10
                               ? () {
                                   FocusManager.instance.primaryFocus?.unfocus();
-      
+
                                   return _controller
-                                      .sendSuggestPhrase(_pharaseController.text,
+                                      .sendSuggestPhrase(
+                                          _pharaseController.text,
                                           _ownerController.text)
                                       .then((value) {
                                     _pharaseController.clear();
                                     _ownerController.clear();
                                     value
-                                        ? showDialogSucces(context).show()
-                                        : showDialogFail(context).show();
+                                        ? showCustomDialog(context, 'Sucesso',
+                                            'Sua sugestão foi enviada!')
+                                        : showCustomDialog(context, 'Erro',
+                                            'Ocorreu um erro ao enviar sua sugestão!');
                                   });
                                 }
                               : null),
@@ -97,31 +100,5 @@ class _SuggestPageState extends State<SuggestPage> {
         ),
       ),
     );
-  }
-
-  AwesomeDialog showDialogFail(BuildContext context) {
-    return AwesomeDialog(
-        context: context,
-        dialogType: DialogType.ERROR,
-        animType: AnimType.TOPSLIDE,
-        headerAnimationLoop: true,
-        title: 'Algo deu errado',
-        desc: 'Sua sugestão não foi enviada, tente novamente mais tarde.',
-        btnOkOnPress: () {},
-        btnOkIcon: Icons.cancel,
-        btnOkColor: customBlue);
-  }
-
-  AwesomeDialog showDialogSucces(BuildContext context) {
-    return AwesomeDialog(
-        context: context,
-        dialogType: DialogType.SUCCES,
-        animType: AnimType.TOPSLIDE,
-        headerAnimationLoop: true,
-        title: 'Pronto!',
-        desc: 'Sua sugestão foi recebida.',
-        btnOkOnPress: () {},
-        btnOkIcon: Icons.cancel,
-        btnOkColor: customPink);
   }
 }
