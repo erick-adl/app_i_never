@@ -21,6 +21,7 @@ class MyApp extends StatelessWidget {
       title: 'Eu nunca - Never Have I Ever',
       initialRoute: AppRoutes.homePage,
       onGenerateRoute: AppRoutes.controller,
+      
     );
   }
 }

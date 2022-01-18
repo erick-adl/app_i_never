@@ -32,24 +32,20 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: customYellow,
       body: Container(
-        child: Padding(
-          padding: EdgeInsets.only(top: height - (height - 60)),
-          child: Center(
-            child: Column(
-              // mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                AppTitleWidget(),
-                Image.asset('assets/mugs.png', scale: 1.8),
-                SizedBox(height: 20),
-                menuCustomElevatedButton('Jogar', () => print('Jogar clicked')),
-                // menuCustomElevatedButton('Categorias', () => print('Categorias clicked')),
-                menuCustomElevatedButton('Sugerir frase',
-                    () => Navigator.pushNamed(context, AppRoutes.suggestPage)),
-                Spacer(),
-                MySocialMediaWidget()
-              ],
-            ),
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 20),
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              AppTitleWidget(),
+              Image.asset('assets/mugs.png', scale: 1.8),
+              SizedBox(height: 20),
+              menuCustomElevatedButton('Jogar', () => print('Jogar clicked')),
+              // menuCustomElevatedButton('Categorias', () => print('Categorias clicked')),
+              menuCustomElevatedButton('Sugerir frase',
+                  () => Navigator.pushNamed(context, AppRoutes.suggestPage)),
+            ],
           ),
         ),
       ),

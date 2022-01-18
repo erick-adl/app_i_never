@@ -11,7 +11,7 @@ void showCustomDialog(
     barrierLabel: "Barrier",
     barrierDismissible: true,
     barrierColor: Colors.black.withOpacity(0.5),
-    transitionDuration: Duration(milliseconds: 500),
+    transitionDuration: Duration(milliseconds: 200),
     pageBuilder: (_, __, ___) {
       return Center(
         child: Container(
@@ -58,10 +58,10 @@ void showCustomDialog(
     },
     transitionBuilder: (_, anim, __, child) {
       Tween<Offset> tween;
-      if (anim.status == AnimationStatus.reverse) {
-        tween = Tween(begin: Offset(-1, 0), end: Offset.zero);
+      if (anim.status == AnimationStatus.dismissed) {
+        tween = Tween(begin: Offset(0, 0), end: Offset.zero);
       } else {
-        tween = Tween(begin: Offset(1, 0), end: Offset.zero);
+        tween = Tween(begin: Offset(0, 0), end: Offset.zero);
       }
 
       return SlideTransition(

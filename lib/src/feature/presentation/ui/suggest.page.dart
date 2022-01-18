@@ -46,56 +46,51 @@ class _SuggestPageState extends State<SuggestPage> {
     final double height = MediaQuery.of(context).size.height;
 
     return Scaffold(
-      // resizeToAvoidBottomInset: false,
       backgroundColor: customYellow,
       body: SingleChildScrollView(
         child: Container(
-          child: Padding(
-            padding: EdgeInsets.only(top: height - (height - 60)),
-            child: Center(
-              child: Observer(builder: (_) {
-                return Column(
-                  crossAxisAlignment: CrossAxisAlignment.center,
-                  children: [
-                    AppTitleWidget(),
-                    SizedBox(height: 20),
-                    CardSuggestWidget(
-                      textEditingController: _pharaseController,
-                    ),
-                    CardOwnerSuggestWidget(
-                      textEditingController: _ownerController,
-                    ),
-                    SizedBox(height: 20),
-                    if (_controller.isLoading)
-                      ColorLoader()
-                    else
-                      menuCustomElevatedButton(
-                          'Enviar',
-                          _pharaseController.text.length > 10
-                              ? () {
-                                  FocusManager.instance.primaryFocus?.unfocus();
+          padding: EdgeInsets.symmetric(
+              horizontal: 20, vertical: MediaQuery.of(context).padding.top+20),
+          child: Center(
+            child: Observer(builder: (_) {
+              return Column(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  AppTitleWidget(),
+                  SizedBox(height: 20),
+                  CardSuggestWidget(
+                    textEditingController: _pharaseController,
+                  ),
+                  CardOwnerSuggestWidget(
+                    textEditingController: _ownerController,
+                  ),
+                  SizedBox(height: 20),
+                  menuCustomElevatedButton(
+                      'Enviar',
+                      _pharaseController.text.length > 10
+                          ? () {
+                              FocusManager.instance.primaryFocus?.unfocus();
 
-                                  return _controller
-                                      .sendSuggestPhrase(
-                                          _pharaseController.text,
-                                          _ownerController.text)
-                                      .then((value) {
-                                    _pharaseController.clear();
-                                    _ownerController.clear();
-                                    value
-                                        ? showCustomDialog(context, 'Sucesso',
-                                            'Sua sugestão foi enviada!')
-                                        : showCustomDialog(context, 'Erro',
-                                            'Ocorreu um erro ao enviar sua sugestão!');
-                                  });
-                                }
-                              : null),
-                    menuCustomElevatedButton(
-                        'Voltar', () => Navigator.pop(context)),
-                  ],
-                );
-              }),
-            ),
+                              return _controller
+                                  .sendSuggestPhrase(_pharaseController.text,
+                                      _ownerController.text)
+                                  .then((value) {
+                                _pharaseController.clear();
+                                _ownerController.clear();
+                                value
+                                    ? showCustomDialog(context, 'Sucesso',
+                                        'Sua sugestão foi enviada!')
+                                    : showCustomDialog(context, 'Erro',
+                                        'Ocorreu um erro ao enviar sua sugestão!');
+                              });
+                            }
+                          : null),
+                  menuCustomElevatedButton(
+                      'Voltar', () => Navigator.pop(context)),
+                  if (_controller.isLoading) ColorLoader()
+                ],
+              );
+            }),
           ),
         ),
       ),
