@@ -36,7 +36,7 @@ class _HomePageState extends State<HomePage> {
               AppTitleWidget(),
               Image.asset('assets/mugs.png', scale: 1.8),
               SizedBox(height: 20),
-              menuCustomElevatedButton('Start',
+              menuCustomElevatedButton('Começar', 
                   () => Navigator.pushNamed(context, AppRoutes.gamePage)),
               menuCustomElevatedButton('Sugerir frase',
                   () => Navigator.pushNamed(context, AppRoutes.suggestPage)),

@@ -20,7 +20,7 @@ class AppRoutes {
       case suggestPage:
         return CupertinoPageRoute(builder: (context) => SuggestPage());
       case gamePage:
-        return MaterialPageRoute(builder: (context) => GamePage());
+        return CupertinoPageRoute(builder: (context) => GamePage());
       default:
         throw ('This route name does not exit');
     }

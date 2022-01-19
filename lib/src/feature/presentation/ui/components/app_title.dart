@@ -10,7 +10,6 @@ class AppTitleWidget extends StatelessWidget {
     return Column(
       children: [
         customBorderesText('Eu nunca...', 35),
-        customBorderesText('Never Have I Ever', 30),
         customBorderesText('Drinnking game', 20, color: customBlue),
       ],
     );

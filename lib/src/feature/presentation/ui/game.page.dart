@@ -17,11 +17,12 @@ class GamePage extends StatefulWidget {
 
 class _GamePageState extends State<GamePage> {
   late HomeController _controller;
+  late SwiperController _swiperController;
 
   @override
   void initState() {
     _controller = GetIt.I.get<HomeController>();
-
+    _swiperController = SwiperController();
     super.initState();
   }
 
@@ -35,12 +36,15 @@ class _GamePageState extends State<GamePage> {
         child: Center(
           child: Column(
             children: [
-              customBorderesText('Eu nunca...', 35),
-              SizedBox(height: 30),
-              CardPhrasesWidget(controller: _controller),
+              customBorderesText('Eu nunca...', 40),
+              SizedBox(height: 10),
+              CardPhrasesWidget(
+                  controller: _controller, swiperController: _swiperController),
               Spacer(),
               menuCustomElevatedButton(
-                  'Encerrar', () => Navigator.pop(context)),
+                  'Próximo', () => _swiperController.next()),
+              menuCustomElevatedButton(
+                  'Finalizar', () => Navigator.pop(context)),
             ],
           ),
         ),
@@ -53,10 +57,13 @@ class CardPhrasesWidget extends StatelessWidget {
   const CardPhrasesWidget({
     Key? key,
     required HomeController controller,
+    required SwiperController swiperController,
   })  : _controller = controller,
+        _swiperController = swiperController,
         super(key: key);
 
   final HomeController _controller;
+  final SwiperController _swiperController;
 
   @override
   Widget build(BuildContext context) {
@@ -77,7 +84,8 @@ class CardPhrasesWidget extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    customBorderesText(_controller.getList[index].text, 20, color: customBlue),
+                    customBorderesText(_controller.getList[index].text, 25,
+                        color: customBlue),
                     Spacer(),
                     Container(
                       height: 2,
@@ -90,8 +98,11 @@ class CardPhrasesWidget extends StatelessWidget {
               ));
         },
         itemCount: _controller.getList.length,
-        viewportFraction: 0.8,
-        scale: 0.8,
+        itemWidth: 400.0,
+        itemHeight: 300.0,
+        layout: SwiperLayout.TINDER,
+        loop: false,
+        controller: _swiperController,
       ),
     );
   }
