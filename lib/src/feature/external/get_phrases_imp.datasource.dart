@@ -10,7 +10,8 @@ class GetPhrasesDataSourceImp implements IGetPhrasesDataSource {
   GetPhrasesDataSourceImp(this.firestore);
 
   @override
-  Future<Either<Exception, List<PhraseEntity>>> call(PhraseLanguage phraseLanguage) async {
+  Future<Either<Exception, List<PhraseEntity>>> call(
+      PhraseLanguage phraseLanguage) async {
     try {
       final snapshot = await firestore.collection(phraseLanguage.key).get();
 
@@ -18,8 +19,6 @@ class GetPhrasesDataSourceImp implements IGetPhrasesDataSource {
           .map((QueryDocumentSnapshot<Map<String, dynamic>> e) =>
               PhraseEntity.fromJson(e.data()))
           .toList();
-
-      listOfPhrases.shuffle();
 
       return Right(listOfPhrases);
     } on Exception catch (e) {

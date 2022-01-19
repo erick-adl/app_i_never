@@ -1,9 +1,7 @@
 import 'package:app_i_never/src/core/theme/colors.dart';
 import 'package:app_i_never/src/feature/presentation/controller/home.controller.dart';
 import 'package:app_i_never/src/feature/presentation/ui/components/bordered_text.dart';
-import 'package:app_i_never/src/feature/presentation/ui/components/card_suggest.dart';
 import 'package:app_i_never/src/feature/presentation/ui/components/custom_buttons.dart';
-import 'package:bordered_text/bordered_text.dart';
 import 'package:card_swiper/card_swiper.dart';
 import 'package:flutter/material.dart';
 import 'package:get_it/get_it.dart';
@@ -22,6 +20,7 @@ class _GamePageState extends State<GamePage> {
   @override
   void initState() {
     _controller = GetIt.I.get<HomeController>();
+    _controller.listOfPhrases.shuffle();
     _swiperController = SwiperController();
     super.initState();
   }
@@ -84,7 +83,7 @@ class CardPhrasesWidget extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    customBorderesText(_controller.getList[index].text, 25,
+                    customBorderesText(_controller.listOfPhrases[index].text, 25,
                         color: customBlue),
                     Spacer(),
                     Container(
@@ -92,12 +91,12 @@ class CardPhrasesWidget extends StatelessWidget {
                       color: Colors.black,
                     ),
                     SizedBox(height: 10),
-                    customBorderesText(_controller.getList[index].owner, 20),
+                    customBorderesText(_controller.listOfPhrases[index].owner, 20),
                   ],
                 ),
               ));
         },
-        itemCount: _controller.getList.length,
+        itemCount: _controller.listOfPhrases.length,
         itemWidth: 400.0,
         itemHeight: 300.0,
         layout: SwiperLayout.TINDER,

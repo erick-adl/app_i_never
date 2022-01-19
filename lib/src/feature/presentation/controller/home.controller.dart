@@ -9,9 +9,7 @@ class HomeController = _HomeControllerBase with _$HomeController;
 abstract class _HomeControllerBase with Store {
   final IGetPhrasesUseCase getPhrasesUseCase;
 
-  late List<PhraseEntity> _listOfPhrases;
-
-  get getList => _listOfPhrases;
+  late List<PhraseEntity> listOfPhrases;
 
   _HomeControllerBase(this.getPhrasesUseCase) {
     getInitialList();
@@ -21,10 +19,10 @@ abstract class _HomeControllerBase with Store {
   Future<void> getInitialList() async {
     final result = await getPhrasesUseCase(PhraseLanguage.BR);
 
-    result.fold((l) => _listOfPhrases = [], (r) => _listOfPhrases = r);
+    result.fold((l) => listOfPhrases = [], (r) => listOfPhrases = r);
 
-    if (_listOfPhrases.isNotEmpty) {
-      print(_listOfPhrases);
+    if (listOfPhrases.isNotEmpty) {
+      print(listOfPhrases);
     }
   }
 }
